@@ -5,10 +5,13 @@ channels:
 
 dependencies:
   - python=3.10
+  - sepal-ui>=2.22.2,<3
+  # leafmap's tree lets the solver drop ipyvuetify to 0.1.x, which predates
+  # _version.semver that sepal_ui imports at startup
+  - ipyvuetify>=1.8,<3
   - requests
-  - gdal=3.8.3
+  - gdal=3.10
   - leafmap
   - pip
   - pip:
-      - sepal_ui==2.21.0
       - git+https://github.com/openforis/earthengine-api.git@v1.1.5rc0#egg=earthengine-api&subdirectory=python
